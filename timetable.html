@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Timetable & Booking — TerraFlow Pilates</title>
+  <meta name="description" content="Filter classes by type, instructor, and date. Book your TerraFlow Pilates session through our integrated partner." />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <meta property="og:title" content="Timetable & Booking — TerraFlow Pilates" />
+  <meta property="og:description" content="Filter classes by type, instructor, and date. Book your TerraFlow session." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/img/brand-mark.svg" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header" role="banner">
+    <div class="container navbar">
+      <a class="brand" href="/">
+        <img src="/assets/img/brand-mark.svg" alt="TerraFlow mark" />
+        <span>TerraFlow Pilates</span>
+      </a>
+      <nav aria-label="Primary" class="nav-cta">
+        <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div id="primary-nav" class="navlinks" data-navlinks>
+          <a href="/philosophy.html">Our Philosophy</a>
+          <a href="/classes.html">Classes</a>
+          <a href="/studio.html">Studio</a>
+          <a href="/timetable.html" aria-current="page">Timetable & Booking</a>
+          <a href="/journal/index.html">Growth Notes</a>
+        </div>
+        <div class="nav-cta">
+          <a class="btn btn-primary" href="/timetable.html">Book Your First Session</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container-narrow">
+        <p class="kicker">Schedule</p>
+        <h1>Timetable & Booking</h1>
+        <p class="lead">Filter by class type, instructor, or date. Book directly through our partner.</p>
+      </div>
+    </section>
+
+    <section class="section section-tight" id="timetable-app">
+      <div class="container">
+        <form id="timetable-filters" class="controls" aria-label="Filter classes">
+          <div>
+            <label for="filter-type">Class type</label>
+            <select id="filter-type">
+              <option value="">All</option>
+              <option value="dynamic-reformer">Dynamic Reformer</option>
+              <option value="mindful-mat">Mindful Mat</option>
+              <option value="restorative-stretch">Restorative Stretch</option>
+            </select>
+          </div>
+          <div>
+            <label for="filter-instructor">Instructor</label>
+            <select id="filter-instructor">
+              <option value="">All</option>
+              <option value="Lena Hart">Lena Hart</option>
+              <option value="Noor El-Sayegh">Noor El-Sayegh</option>
+              <option value="Theo Marin">Theo Marin</option>
+            </select>
+          </div>
+          <div>
+            <label for="filter-date">Date</label>
+            <input type="date" id="filter-date" />
+          </div>
+        </form>
+
+        <div style="margin-top: 16px" id="timetable-results" aria-live="polite" aria-busy="false"></div>
+
+        <script id="schedule-data" type="application/json">
+          [
+            {"id":"c1","className":"Dynamic Reformer","type":"dynamic-reformer","instructor":"Theo Marin","datetime":"2025-10-06T09:30:00","energy":"energize","energyLabel":"High Energy"},
+            {"id":"c2","className":"Mindful Mat","type":"mindful-mat","instructor":"Noor El-Sayegh","datetime":"2025-10-06T12:00:00","energy":"center","energyLabel":"Center"},
+            {"id":"c3","className":"Restorative Stretch & Sound Bath","type":"restorative-stretch","instructor":"Lena Hart","datetime":"2025-10-07T18:30:00","energy":"restore","energyLabel":"Restore"},
+            {"id":"c4","className":"Dynamic Reformer","type":"dynamic-reformer","instructor":"Theo Marin","datetime":"2025-10-08T07:00:00","energy":"energize","energyLabel":"High Energy"}
+          ]
+        </script>
+      </div>
+    </section>
+
+    <section class="section section-tight" id="booking">
+      <div class="container-narrow">
+        <h2>Book your session</h2>
+        <p class="small">We integrate seamlessly with leading booking providers. Add your widget URL to enable direct booking.</p>
+        <div id="booking-embed" class="surface" style="min-height: 200px; padding: 12px; border-radius: 16px;">
+          <!-- Iframe injected by JS when window.__BOOKING_EMBED_URL is set -->
+        </div>
+        <script>
+          // Example: set this to your provider's URL, e.g., Mindbody, Momence, or Acuity
+          // window.__BOOKING_EMBED_URL = 'https://example.com/your-booking-widget';
+        </script>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="/assets/img/brand-mark.svg" alt="TerraFlow mark" />
+          <div>
+            <strong>TerraFlow Pilates</strong>
+            <p class="small">Holistic wellness sanctuary in the heart of the city.</p>
+          </div>
+        </div>
+        <div class="hr"></div>
+        <p class="small">© <span id="y"></span> TerraFlow Pilates. All rights reserved.</p>
+      </div>
+      <nav aria-label="Footer" class="footer-nav">
+        <a href="/philosophy.html">Our Philosophy</a>
+        <a href="/classes.html">Classes</a>
+        <a href="/studio.html">Studio</a>
+        <a href="/timetable.html" aria-current="page">Timetable & Booking</a>
+        <a href="/journal/index.html">Growth Notes</a>
+      </nav>
+      <div>
+        <p class="small"><strong>Visit</strong><br/>123 Willow Lane, Suite 2<br/>Eucalypt District</p>
+        <p class="small"><strong>Contact</strong><br/><a href="mailto:hello@terraflow.studio">hello@terraflow.studio</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="/assets/js/structured-data.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
